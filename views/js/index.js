@@ -11,11 +11,27 @@ const parseJwt = (token) => {
 
 window.onload = () => {
 
+    const shortcuts = localStorage.getItem("shortcuts");
+    const shortcutsModal = document.getElementById("shortcuts-toggle-modal");
     const tokenString = localStorage.getItem("auth");
     const email = tokenString ? parseJwt(tokenString).email : null;
 
+    if (shortcuts && shortcuts == "false") {
+        hideShortcuts();
+    } else {
+        showShortcuts();
+    };
+
+    shortcutsModal.addEventListener("mouseover", () => {
+        document.getElementById("shortcuts-toggle").style.display = "flex";
+    });
+
+    shortcutsModal.addEventListener("mouseout", () => {
+        document.getElementById("shortcuts-toggle").style.display = "none";
+    });
+
     htmx.ajax("GET", `/handle/navbar/home/${tokenString}`, { target: "#navbar-profile", swap: "innerHTML" });
-    htmx.ajax("GET", `/handle/shortcut/${tokenString}`, { target: "#shortcuts", swap: "beforeend" });
+    htmx.ajax("GET", `/handle/shortcut/${tokenString}`, { target: "#shortcuts-modal", swap: "beforeend" });
 
     setTimeout(() => {
         htmx.ajax("GET", `/handle/username/${tokenString}`, { target: "#terminal-console", swap: "beforeend" });
@@ -77,6 +93,28 @@ const fillForm = () => {
 const logout = () => {
     localStorage.removeItem("auth");
     window.location.href = "/";
+};
+
+const showShortcuts = () => {
+    document.getElementById("shortcuts-modal").style.display = "flex";
+    document.getElementById("shortcuts-toggle").src = "/public/hide.webp";
+};
+
+const hideShortcuts = () => {
+    document.getElementById("shortcuts-modal").style.display = "none";
+    document.getElementById("shortcuts-toggle").src = "/public/show.webp";
+};
+
+const toggleShortcuts = () => {
+    const showShortcuts = localStorage.getItem("shortcuts");
+
+    if (showShortcuts && showShortcuts == "false") {
+        localStorage.setItem("shortcuts", "true");
+        window.location.reload();
+    } else {
+        localStorage.setItem("shortcuts", "false");
+        window.location.reload();
+    };
 };
 
 const emptyForm = () => {
