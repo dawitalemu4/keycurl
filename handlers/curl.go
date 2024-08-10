@@ -19,7 +19,7 @@ func buildCommand(request models.Request) []string {
     shell := []string{"bash", "-c"}
     command := []string{"curl", "-L", "-v", "--http1.1"}
 
-    if request.Method != "" {
+    if request.Method != "" && request.Method != "GET" {
         command = append(command, "-X", request.Method)
     }
 
@@ -56,8 +56,13 @@ func ExecuteCurlRequest(c echo.Context) error {
     err := curlRequest.Run()
 
     if err != nil && err.Error() == "exit status 6" {
+        println(err.Error(), "\n response: ", response.String(), "\n headers: ", headers.String())
         return c.HTML(200, "<p>$  error: " + err.Error() + ", probably an invalid url given</p>")
+    }  else if err != nil && err.Error() == "exit status 7" {
+        println(err.Error(), "\n response: ", response.String(), "\n headers: ", headers.String())
+        return c.HTML(200, "<p>$  error: " + err.Error() + ", probably can't connect to localhost, use host.docker.internal instead of localhost in your url if running postwoman with docker</p>")
     } else if err != nil {
+        println(err.Error(), "\n response: ", response.String(), "\n headers: ", headers.String())
         return c.HTML(200, "<p>$  error: " + err.Error() + ", probably an invalid header or body given</p>")
     }
 

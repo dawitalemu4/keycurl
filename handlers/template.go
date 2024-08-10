@@ -62,7 +62,7 @@ func RenderNavbar(c echo.Context) error {
 
     return c.HTML(200, `
         <a id="` + pages["profile"] + `" href="/profile">` + token.Username + ` /</a>
-        <a href="/" onclick="localStorage.removeItem("auth");">/ logout</a>
+        <a onclick="logout();">/ logout</a>
     `)
 }
 

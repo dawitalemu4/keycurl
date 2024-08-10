@@ -72,8 +72,7 @@ const executeHomeShortcuts = (shortcut) => {
     } else if (shortcut === shortuctKeys["profile"] && loggedIn != null) {
         window.location.href = "/profile";
     } else if (shortcut === shortuctKeys["logout"] && loggedIn != null) {
-        localStorage.removeItem("auth");
-        window.location.href = "/";
+        logout();
     };
 };
 
@@ -102,8 +101,7 @@ const executeProfileShortcuts = (shortcut) => {
     } else if (shortcut === shortuctKeys["home"]) {
         window.location.href = "/";
     } else if (shortcut === shortuctKeys["logout"]) {
-        localStorage.removeItem("auth");
-        window.location.href = "/";
+        logout();
     };
 };
 

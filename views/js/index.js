@@ -74,6 +74,11 @@ const fillForm = () => {
     };
 };
 
+const logout = () => {
+    localStorage.removeItem("auth");
+    window.location.href = "/";
+};
+
 const emptyForm = () => {
     document.getElementById("new-request").reset();
 };
