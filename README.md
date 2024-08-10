@@ -64,6 +64,8 @@ Go to [postwoman.dev/features](https://postwoman.dev/features) to view all featu
 
 See the README in the [.docker-setup](https://github.com/dawitalemu4/postwoman/tree/main/.docker-setup) folder for the docker setup guide.
 
+> WARNING: If using postwoman from docker and you want to test localhost urls, replace localhost with host.docker.internal in the url.
+
 ### Local Setup
 
 To locally run postwoman, you need to have Go, PostgreSQL, Bash, and cURL installed on your machine.
