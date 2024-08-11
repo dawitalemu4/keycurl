@@ -245,7 +245,7 @@ func RenderHistoryList(c echo.Context) error {
                     <div class="deleted-item">deleted item</div>
                     <input type="hidden" name="headers" value="` + request.Headers + `" />
                     <input type="hidden" name="origin" value="` + request.Origin + `" />
-                    <input type="hidden" name="body" value=` + request.Body + ` />
+                    <textarea style="visibility:hidden" name="body">` + request.Body + ` </textarea>
                 </div>
             `
         }
