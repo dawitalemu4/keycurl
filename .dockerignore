@@ -1,0 +1,11 @@
+.git
+.docker-setup
+.tmp
+.air.toml
+.env
+.gitignore
+LICENSE.txt
+README.md
+startup.sh
+
+tests

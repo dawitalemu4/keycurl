@@ -118,6 +118,8 @@ Visit [postwoman.dev/shortcuts](https://postwoman.dev/shortcuts) for demo videos
 
 I'm open to contributions and suggestions, but fork this project if there are any crazy big changes you want to make that go against the [postwoman.dev/contributing](https://postwoman.dev/contributing).
 
+Run `go test -v ./...` to run the tests against your changes before creating a pr.
+
 Follow the checklist in the [postwoman.dev/contributing](https://postwoman.dev/contributing) if you create a pull request or an issue.
 
 

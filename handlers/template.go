@@ -225,10 +225,6 @@ func RenderHistoryList(c echo.Context) error {
 
             request.Date = humanize.Time(time.UnixMilli(int64Date))
 
-            if request.Body == "" {
-                request.Body = "''"
-            }
-
             htmlHistoryList += `
                 <div class="history-item" tabindex="` + strconv.Itoa(i+1) + `" id="` + strconv.Itoa(request.ID) + `">
                     <div class="history-item-left-container">
@@ -236,7 +232,7 @@ func RenderHistoryList(c echo.Context) error {
                         <p>` + request.Method + `</p>
                     </div>
                     <div class="history-item-right-container">
-                        <p>` + request.Url + `</p>
+                        <p><bdi>` + request.Url + `</bdi></p>
                         <p>` + request.Date + `</p>
                     </div>
                     <div class="added-favorite">added to favorites</div>
@@ -245,7 +241,7 @@ func RenderHistoryList(c echo.Context) error {
                     <div class="deleted-item">deleted item</div>
                     <input type="hidden" name="headers" value="` + request.Headers + `" />
                     <input type="hidden" name="origin" value="` + request.Origin + `" />
-                    <textarea style="visibility:hidden" name="body">` + request.Body + ` </textarea>
+                    <textarea name="body" hidden>` + request.Body + `</textarea>
                 </div>
             `
         }
@@ -277,10 +273,6 @@ func RenderFavoritesList(c echo.Context) error {
 
             request.Date = humanize.Time(time.UnixMilli(int64Date))
 
-            if request.Body == "" {
-                request.Body = "''"
-            }
-
             htmlFavoritesList += `
                 <div class="favorites-item" tabindex="` + strconv.Itoa(i+1) + `" id="` + strconv.Itoa(request.ID) + `">
                     <div class="favorites-item-left-container">
@@ -288,7 +280,7 @@ func RenderFavoritesList(c echo.Context) error {
                         <p>` + request.Method + `</p>
                     </div>
                     <div class="favorites-item-right-container">
-                        <p>` + request.Url + `</p>
+                        <p><bdi>` + request.Url + `</bdi></p>
                         <p>` + request.Date + `</p>
                     </div>
                     <div class="added-favorite">added to favorites</div>
@@ -296,7 +288,7 @@ func RenderFavoritesList(c echo.Context) error {
                     <div class="deleted-item">deleted item</div>
                     <input type="hidden" name="headers" value="` + request.Headers + `" />
                     <input type="hidden" name="origin" value="` + request.Origin + `" />
-                    <input type="hidden" name="body" value=` + request.Body + ` />
+                    <textarea name="body" hidden>` + request.Body + `</textarea>
                 </div>
             `
         }
