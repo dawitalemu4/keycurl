@@ -106,9 +106,18 @@
     align-items: flex-start;
 }
 
-.history-item div p, .favorites-item div p {
+.history-item-right-container p:first-child, .favorites-item-right-container p:first-child {
+    direction: rtl;
+    width: 90%;
+    margin-top: 20px;
+    text-align: left;
     white-space: nowrap;
     text-overflow: ellipsis;
+    text-decoration: none;
+    color: white;
+    overflow: hidden;
+    cursor: pointer;
+    unicode-bidi: embed;
 }
 
 .removed-favorite, .added-favorite, .not-loggedin, .deleted-item {
