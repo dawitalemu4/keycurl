@@ -239,6 +239,7 @@ func RenderHistoryList(c echo.Context) error {
                     <div class="removed-favorite">removed from favorites</div>
                     <div class="not-loggedin">log in to save favorites</div>
                     <div class="deleted-item">deleted item</div>
+                    <input type="hidden" name="url" value="` + request.Url + `" />
                     <input type="hidden" name="headers" value="` + request.Headers + `" />
                     <input type="hidden" name="origin" value="` + request.Origin + `" />
                     <textarea name="body" hidden>` + request.Body + `</textarea>
@@ -286,6 +287,7 @@ func RenderFavoritesList(c echo.Context) error {
                     <div class="added-favorite">added to favorites</div>
                     <div class="removed-favorite">removed from favorites</div>
                     <div class="deleted-item">deleted item</div>
+                    <input type="hidden" name="url" value="` + request.Url + `" />
                     <input type="hidden" name="headers" value="` + request.Headers + `" />
                     <input type="hidden" name="origin" value="` + request.Origin + `" />
                     <textarea name="body" hidden>` + request.Body + `</textarea>

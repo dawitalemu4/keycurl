@@ -113,11 +113,7 @@
     text-align: left;
     white-space: nowrap;
     text-overflow: ellipsis;
-    text-decoration: none;
-    color: white;
     overflow: hidden;
-    cursor: pointer;
-    unicode-bidi: embed;
 }
 
 .removed-favorite, .added-favorite, .not-loggedin, .deleted-item {

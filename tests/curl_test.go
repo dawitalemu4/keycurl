@@ -44,7 +44,7 @@ func TestGoodRequest(t *testing.T) {
 func TestBadRequest(t *testing.T) {
     body := `   
         {
-    "user_email": ""
+            "user_email": ""
             "url"
             "method"
             "origin"
