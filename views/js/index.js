@@ -70,18 +70,18 @@ const fillForm = () => {
     const curlForm = document.getElementById("new-request");
 
     const methodField = curlForm.children.method;
+    const urlField = curlForm.children.url;
     const headersField = curlForm.children.headers;
     const originField = curlForm.children.origin;
     const bodyField = curlForm.children.body;
-    const urlField = curlForm.children.url;
 
     if (selectedItem.className === "history-item" || selectedItem.className === "favorites-item") {
 
         methodField.value = selectedItem.children[0].children[1].innerHTML;
+        urlField.value = selectedItem.children.url.value;
         headersField.value = selectedItem.children.headers.value;
         originField.value = selectedItem.children.origin.value;
         bodyField.value = selectedItem.children.body.value;
-        urlField.value = selectedItem.children[1].children[0].innerHTML;
 
         document.getElementById("history-modal").style.display = "none";
         document.getElementById("favorites-modal").style.display = "none";
