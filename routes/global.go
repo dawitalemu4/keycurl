@@ -12,6 +12,8 @@ func ConfigGlobalRoutes() *echo.Echo {
 
     e.Renderer = handlers.RenderTemplate()
 
+    e.GET("/healthcheck", handlers.HealthCheck)
+
     // e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
     //     AllowOrigins: []string{env["CLIENT_URL"], env["LOCAL_URL"]},
     // }))
