@@ -102,7 +102,7 @@ air
 
 6. Open your browser and navigate to `localhost:YOURPORT`
 
-Download links: [Go](https://go.dev/doc/install), [PostgreSQL](https://www.postgresql.org/download/), [Bash](https://git-scm.com/downloads) (I prefer git bash), [cURL](https://curl.se/download.html).
+Download links: [Go](https://go.dev/doc/install), [PostgreSQL](https://www.postgresql.org/download/), [Bash](https://git-scm.com/downloads), [cURL](https://curl.se/download.html).
 
 View [postwoman.dev/install](https://postwoman.dev/install) for more detailed instructions for your OS.
 
@@ -118,7 +118,7 @@ Visit [postwoman.dev/shortcuts](https://postwoman.dev/shortcuts) for demo videos
 
 I'm open to contributions and suggestions, but fork this project if there are any crazy big changes you want to make that go against the [postwoman.dev/contributing](https://postwoman.dev/contributing).
 
-Run `go test -v ./...` to run the tests against your changes before creating a pr.
+Run `go test -v ./tests` to run the tests against your changes before creating a pr.
 
 Follow the checklist in the [postwoman.dev/contributing](https://postwoman.dev/contributing) if you create a pull request or an issue.
 

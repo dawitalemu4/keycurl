@@ -14,16 +14,23 @@ import (
 )
 
 func TestGoodRequest(t *testing.T) {
-    body := `   
-    {
-            "name": "Jon Snow",
-            "email": "jon@labstack.com"
+    body := `
+        {
+            "user_email": "null"
+            "url": "http://localhost:1323/healthcheck"
+            "method": "GET"
+            "origin": ""
+            "headers": ""
+            "body": ""
+            "status": "200"
+            "date": "1723697427081"
+            "hidden": "false"
         }
     `
     mockRes := `
         $  status: 200
         <br /><br />
-        <textarea id="response-textarea" readonly>&#013;</textarea>
+        <textarea id="response-textarea" readonly>postwoman:~&#013;</textarea>
     `
 
     e := routes.ConfigGlobalRoutes()
@@ -31,7 +38,7 @@ func TestGoodRequest(t *testing.T) {
     e = routes.UserRoutes()
     e = routes.RequestRoutes()
 
-    req := httptest.NewRequest(http.MethodPost, "/", strings.NewReader(body))
+    req := httptest.NewRequest(http.MethodPost, "/curl/request", strings.NewReader(body))
     req.Header.Set(echo.HeaderContentType, echo.MIMEApplicationJSON)
     rec := httptest.NewRecorder()
     context := e.NewContext(req, rec)
@@ -42,23 +49,23 @@ func TestGoodRequest(t *testing.T) {
 }
 
 func TestBadRequest(t *testing.T) {
-    body := `   
+    body := `
         {
-            "user_email": ""
-            "url"
-            "method"
-            "origin"
-            "headers"
-            "body"
-            "status"
-            "date"
-            "hidden"
+            "user_email": "null"
+            "url": "http://localhost:1323/healthcheck"
+            "method": "GET"
+            "origin": ""
+            "headers": ""
+            "body": ""
+            "status": "200"
+            "date": "1723697427081"
+            "hidden": "false"
         }
     `
     mockRes := `
         $  status: 200
         <br /><br />
-        <textarea id="response-textarea" readonly>&#013;</textarea>
+        <textarea id="response-textarea" readonly>incorrect res&#013;</textarea>
     `
 
     e := routes.ConfigGlobalRoutes()
