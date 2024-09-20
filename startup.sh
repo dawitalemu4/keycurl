@@ -12,5 +12,5 @@ pg_ctl -D "C:\Program Files\PostgreSQL\16\data" start
 # brew services start postgresql
 
 
-# start up postwoman, could also use 'go run server.go'
+# start up postwoman, could also use "go run server.go"
 air
