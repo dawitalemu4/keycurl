@@ -24,15 +24,15 @@ func buildCommand(request models.Request) []string {
     }
 
     if request.Headers != "" {
-        command = append(command, "-H", `'` + request.Headers + `'`)
+        command = append(command, "-H", "'" + request.Headers + "'")
     }
 
     if request.Origin != "" {
-        command = append(command, "-H", `'Origin: ` + request.Origin + `'`)
+        command = append(command, "-H", "'Origin: " + request.Origin + "'")
     }
 
     if request.Body != "" {
-        command = append(command, "-d", `'` + request.Body + `'`)
+        command = append(command, "-d", "'" + request.Body + "'")
     }
 
     command = append(command, request.Url)

@@ -193,11 +193,11 @@ kbd {
 }
 
 @font-face {
-    font-family: 'CascadiaMono';
-    src: url('/public/CascadiaMonoNerdFont.ttf') format('truetype');
+    font-family: "CascadiaMono";
+    src: url("/public/CascadiaMonoNerdFont.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'Ubuntu';
-    src: url('/public/Ubuntu-Medium.ttf') format('truetype');
+    font-family: "Ubuntu";
+    src: url("/public/Ubuntu-Medium.ttf") format("truetype");
 }
