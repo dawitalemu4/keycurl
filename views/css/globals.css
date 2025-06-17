@@ -9,7 +9,7 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: black;
-    font-family: CascadiaMono;
+    font-family: Lilex;
     color: white;
     overflow: hidden;
 }
@@ -193,8 +193,8 @@ kbd {
 }
 
 @font-face {
-    font-family: "CascadiaMono";
-    src: url("/public/CascadiaMonoNerdFont.ttf") format("truetype");
+    font-family: "Lilex";
+    src: url("/public/LilexNerdFontMono.ttf") format("truetype");
 }
 
 @font-face {

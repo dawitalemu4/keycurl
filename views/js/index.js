@@ -59,7 +59,7 @@ const formatResponse = () => {
         responseTextarea.textContent = html_beautify(responseTextarea.textContent);
 
         setTimeout(() => {
-            document.title = "postwoman";
+            document.title = "gokey-cURL";
         }, 200);
     };
 };

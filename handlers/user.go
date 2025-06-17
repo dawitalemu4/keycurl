@@ -9,7 +9,7 @@ import (
     "github.com/golang-jwt/jwt/v5"
     "golang.org/x/crypto/bcrypt"
 
-    "postwoman/models"
+    "gokey-cURL/models"
 )
 
 func authUser(data models.User) map[string]interface{} {

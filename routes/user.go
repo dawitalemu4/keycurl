@@ -3,7 +3,7 @@ package routes
 import (
     "github.com/labstack/echo/v4"
 
-    "postwoman/handlers"
+    "gokey-cURL/handlers"
 )
 
 func UserRoutes() *echo.Echo {

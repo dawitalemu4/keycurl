@@ -3,25 +3,25 @@ package routes
 import (
     "github.com/labstack/echo/v4"
 
-    "postwoman/handlers"
+    "gokey-cURL/handlers"
 )
 
 func TemplateRoutes() *echo.Echo {
 
     e.GET("/", func(c echo.Context) error {
-        return c.Render(200, "postwoman", map[string]string{"screen": "index"})
+        return c.Render(200, "gokey-cURL", map[string]string{"screen": "index"})
     })
 
     e.GET("/login", func(c echo.Context) error {
-        return c.Render(200, "postwoman", map[string]string{"screen": "login"})
+        return c.Render(200, "gokey-cURL", map[string]string{"screen": "login"})
     })
 
     e.GET("/signup", func(c echo.Context) error {
-        return c.Render(200, "postwoman", map[string]string{"screen": "signup"})
+        return c.Render(200, "gokey-cURL", map[string]string{"screen": "signup"})
     })
 
     e.GET("/profile", func(c echo.Context) error {
-        return c.Render(200, "postwoman", map[string]string{"screen": "profile"})
+        return c.Render(200, "gokey-cURL", map[string]string{"screen": "profile"})
     })
 
     e.GET("/handle/navbar/:page/:token", handlers.RenderNavbar)

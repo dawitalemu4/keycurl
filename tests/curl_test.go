@@ -1,8 +1,8 @@
 package tests
 
 import (
-    "postwoman/handlers"
-    "postwoman/routes"
+    "gokey-cURL/handlers"
+    "gokey-cURL/routes"
 
     "net/http"
     "net/http/httptest"
@@ -30,7 +30,7 @@ func TestGoodRequest(t *testing.T) {
     mockRes := `
         $  status: 200
         <br /><br />
-        <textarea id="response-textarea" readonly>postwoman:~&#013;</textarea>
+        <textarea id="response-textarea" readonly>gokey-cURL:~&#013;</textarea>
     `
 
     e := routes.ConfigGlobalRoutes()
