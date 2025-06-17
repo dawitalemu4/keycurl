@@ -1,37 +1,21 @@
 const parseJwt = (token) => {
 
-    const base64Url = token.split(".")[1];
-    const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
-    const jsonPayload = decodeURIComponent(window.atob(base64).split("").map(function(c) {
-        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(""));
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
 
     return JSON.parse(jsonPayload);
 };
 
 window.onload = () => {
 
-    const shortcuts = localStorage.getItem("shortcuts");
-    const shortcutsModal = document.getElementById("shortcuts-toggle-modal");
     const tokenString = localStorage.getItem("auth");
     const email = tokenString ? parseJwt(tokenString).email : null;
 
-    if (shortcuts && shortcuts == "false") {
-        hideShortcuts();
-    } else {
-        showShortcuts();
-    };
-
-    shortcutsModal.addEventListener("mouseover", () => {
-        document.getElementById("shortcuts-toggle").style.display = "flex";
-    });
-
-    shortcutsModal.addEventListener("mouseout", () => {
-        document.getElementById("shortcuts-toggle").style.display = "none";
-    });
-
     htmx.ajax("GET", `/handle/navbar/home/${tokenString}`, { target: "#navbar-profile", swap: "innerHTML" });
-    htmx.ajax("GET", `/handle/shortcut/${tokenString}`, { target: "#shortcuts-modal", swap: "beforeend" });
+    htmx.ajax("GET", `/handle/shortcut/${tokenString}`, { target: "#shortcuts", swap: "beforeend" });
 
     setTimeout(() => {
         htmx.ajax("GET", `/handle/username/${tokenString}`, { target: "#terminal-console", swap: "beforeend" });
@@ -59,7 +43,7 @@ const formatResponse = () => {
         responseTextarea.textContent = html_beautify(responseTextarea.textContent);
 
         setTimeout(() => {
-            document.title = "postwoman";
+            document.title = "gokey-cURL";
         }, 200);
     };
 };
@@ -70,50 +54,23 @@ const fillForm = () => {
     const curlForm = document.getElementById("new-request");
 
     const methodField = curlForm.children.method;
-    const urlField = curlForm.children.url;
     const headersField = curlForm.children.headers;
     const originField = curlForm.children.origin;
     const bodyField = curlForm.children.body;
+    const urlField = curlForm.children.url;
 
     if (selectedItem.className === "history-item" || selectedItem.className === "favorites-item") {
 
         methodField.value = selectedItem.children[0].children[1].innerHTML;
-        urlField.value = selectedItem.children.url.value;
         headersField.value = selectedItem.children.headers.value;
         originField.value = selectedItem.children.origin.value;
         bodyField.value = selectedItem.children.body.value;
+        urlField.value = selectedItem.children[1].children[0].innerHTML;
 
         document.getElementById("history-modal").style.display = "none";
         document.getElementById("favorites-modal").style.display = "none";
 
         methodField.focus();
-    };
-};
-
-const logout = () => {
-    localStorage.removeItem("auth");
-    window.location.href = "/";
-};
-
-const showShortcuts = () => {
-    document.getElementById("shortcuts-modal").style.display = "flex";
-    document.getElementById("shortcuts-toggle").src = "/public/hide.webp";
-};
-
-const hideShortcuts = () => {
-    document.getElementById("shortcuts-modal").style.display = "none";
-    document.getElementById("shortcuts-toggle").src = "/public/show.webp";
-};
-
-const toggleShortcuts = () => {
-    const showShortcuts = localStorage.getItem("shortcuts");
-
-    if (showShortcuts && showShortcuts == "false") {
-        localStorage.setItem("shortcuts", "true");
-        window.location.reload();
-    } else {
-        localStorage.setItem("shortcuts", "false");
-        window.location.reload();
     };
 };
 

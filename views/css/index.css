@@ -4,7 +4,7 @@
 
 #new-request > * {
     width: 60%;
-    font-family: CascadiaMono;
+    font-family: Lilex;
     font-size: 16px;
     color: white;
     margin-bottom: 10px;
@@ -28,9 +28,6 @@
 }
 
 #new-request input:nth-last-of-type(3) {
-    resize: horizontal;
-    min-width: 60%;
-    max-width: 100%;
     margin-top: 100px;
 }
 
@@ -42,7 +39,7 @@
     display: table;
     width: 100%;
     margin-bottom: 20px;
-    font-family: CascadiaMono;
+    font-family: Lilex;
     font-size: 14px;
     color: white;
     background-color: black;
@@ -74,7 +71,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-family: CascadiaMono;
+    font-family: Lilex;
     font-size: 14px;
     color: white;
     background-color: black;
@@ -106,14 +103,9 @@
     align-items: flex-start;
 }
 
-.history-item-right-container p:first-child, .favorites-item-right-container p:first-child {
-    direction: rtl;
-    width: 90%;
-    margin-top: 20px;
-    text-align: left;
+.history-item div p, .favorites-item div p {
     white-space: nowrap;
     text-overflow: ellipsis;
-    overflow: hidden;
 }
 
 .removed-favorite, .added-favorite, .not-loggedin, .deleted-item {

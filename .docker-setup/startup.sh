@@ -2,8 +2,8 @@
 
 PROCESS=Docker
 
-# enter your postwoman folder path
-cd D:/developer/postwoman
+# enter your gokey-cURL folder path
+cd D:/dev/gokey-cURL
 
 
 # start up the docker engine 
@@ -36,6 +36,6 @@ done
 # done
 
 
-# start up postwoman
+# start up gokey-cURL
 
 docker-compose up

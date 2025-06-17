@@ -1,6 +1,6 @@
 window.onload = () => {
 
-    const tokenString = localStorage.getItem("auth");
+    const tokenString = localStorage.getItem('auth');
 
     htmx.ajax("GET", `/handle/navbar/login/${tokenString}`, { target: "#navbar-profile", swap: "innerHTML" });
 };
@@ -19,7 +19,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 
     if (typeof authenticated === "string" && authenticated.length > 0) {
 
-        localStorage.setItem("auth", authenticated);
+        localStorage.setItem('auth', authenticated);
         htmx.ajax("GET", `/handle/login/${authenticated}`, { target: "#login-response", swap: "innerHTML" });
 
         setTimeout(() => {

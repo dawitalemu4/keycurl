@@ -28,5 +28,5 @@ REFERENCES "user"(email);
 
 INSERT INTO "user" (username, email, password, date, deleted) VALUES ('anon', 'null', 'anon', CAST(CAST(EXTRACT(EPOCH FROM NOW()) AS INTEGER) AS TEXT), false);
 
--- psql -U postgres -c "CREATE DATABASE postwoman;"
--- psql -U postgres -d postwoman -f './queries.sql'
+-- psql -U postgres -c "CREATE DATABASE gokey;"
+-- psql -U postgres -d gokey -f './queries.sql'

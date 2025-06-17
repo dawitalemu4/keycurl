@@ -9,7 +9,7 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: black;
-    font-family: CascadiaMono;
+    font-family: Lilex;
     color: white;
     overflow: hidden;
 }
@@ -45,7 +45,6 @@ html, body {
 #navbar a {
     text-decoration: none;
     color: white;
-    cursor: pointer;
 }
 
 #navbar a:hover {
@@ -114,10 +113,12 @@ html, body {
 #shortcuts {
     display: flex;
     position: relative;
-    width: 100%;
+    width: 90%;
     height: 15%;
     padding-bottom: 5px;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 #shortcuts::-webkit-scrollbar {
@@ -130,33 +131,9 @@ html, body {
     border-radius: 25px;
 }
 
-#shortcuts-modal {
-    display: none;
-    width: 90%;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-#shortcuts-modal div {
+#shortcuts div {
     margin: 0 15px;
     font-size: 14px;
-}
-
-#shortcuts-toggle-modal {
-    position: absolute;
-    right: 0;
-    width: 10%;
-    height: 100%;
-}
-
-#shortcuts-toggle {
-    display: none;
-    position: absolute;
-    right: 10px;
-    width: 25px;
-    padding: 5px;
-    cursor: pointer;
 }
 
 kbd {
@@ -193,11 +170,11 @@ kbd {
 }
 
 @font-face {
-    font-family: "CascadiaMono";
-    src: url("/public/CascadiaMonoNerdFont.ttf") format("truetype");
+    font-family: 'Lilex';
+    src: url('/public/LilexNerdFontMono.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: "Ubuntu";
-    src: url("/public/Ubuntu-Medium.ttf") format("truetype");
+    font-family: 'Ubuntu';
+    src: url('/public/Ubuntu-Medium.ttf') format('truetype');
 }

@@ -8,7 +8,7 @@ import (
     "github.com/stephenafamo/scan"
     "github.com/stephenafamo/scan/pgxscan"
 
-    "postwoman/models"
+    "gokey-cURL/models"
 )
 
 func GetAllRequests(c echo.Context) error {

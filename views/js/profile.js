@@ -1,17 +1,17 @@
 const parseJwt = (token) => {
 
-    const base64Url = token.split(".")[1];
-    const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
-    const jsonPayload = decodeURIComponent(window.atob(base64).split("").map(function(c) {
-        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(""));
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
 
     return JSON.parse(jsonPayload);
 };
 
 window.onload = function() {
 
-    const tokenString = localStorage.getItem("auth");
+    const tokenString = localStorage.getItem('auth');
     const profile = parseJwt(tokenString);
     const username = document.getElementById("profile-username");
     const password = document.getElementById("profile-password");
@@ -27,7 +27,7 @@ document.getElementById("profile-form").addEventListener("submit", async (e) => 
 
     e.preventDefault();
 
-    const profile = parseJwt(localStorage.getItem("auth"));
+    const profile = parseJwt(localStorage.getItem('auth'));
 
     const username = document.getElementById("profile-username");
     const password = document.getElementById("profile-password");
@@ -47,7 +47,7 @@ document.getElementById("profile-form").addEventListener("submit", async (e) => 
 
     if (typeof updatedProfile === "string" && updatedProfile.length > 0) {
 
-        localStorage.setItem("auth", updatedProfile);
+        localStorage.setItem('auth', updatedProfile);
         htmx.ajax("GET", `/handle/profile/update/${updatedProfile}`, { target: "#profile-response", swap: "innerHTML" });
 
         setTimeout(() => {
@@ -78,7 +78,7 @@ document.getElementById("profile-form").addEventListener("submit", async (e) => 
 
 const deleteProfile = async () => {
 
-    const profile = parseJwt(localStorage.getItem("auth"));
+    const profile = parseJwt(localStorage.getItem('auth'));
 
     const response = document.getElementById("profile-response");
     const timer = document.getElementById("profile-timer");

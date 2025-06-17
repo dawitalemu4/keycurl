@@ -1,8 +1,8 @@
 package main
 
 import (
-    "postwoman/utils"
-    "postwoman/routes"
+    "gokey-cURL/utils"
+    "gokey-cURL/routes"
 )
 
 func main() {

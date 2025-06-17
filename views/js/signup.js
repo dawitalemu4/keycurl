@@ -1,6 +1,6 @@
 window.onload = () => {
 
-    const tokenString = localStorage.getItem("auth");
+    const tokenString = localStorage.getItem('auth');
 
     htmx.ajax("GET", `/handle/navbar/signup/${tokenString}`, { target: "#navbar-profile", swap: "innerHTML" });
 };
@@ -23,7 +23,7 @@ document.getElementById("signup-form").addEventListener("submit", async (e) => {
 
         if (typeof created === "string" && created.length > 0) {
 
-            localStorage.setItem("auth", created);
+            localStorage.setItem('auth', created);
             htmx.ajax("GET", `/handle/signup/${created}`, { target: "#signup-response", swap: "innerHTML" });
 
             setTimeout(() => {

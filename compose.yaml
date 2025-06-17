@@ -16,7 +16,7 @@ services:
       - ./pgdata:/var/lib/postgresql/data
       - ./queries.sql:/docker-entrypoint-initdb.d/queries.sql
 
-  postwoman:
+  gokey:
     env_file:
       - .env
     build:
