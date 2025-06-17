@@ -28,6 +28,9 @@
 }
 
 #new-request input:nth-last-of-type(3) {
+    resize: horizontal;
+    min-width: 60%;
+    max-width: 100%;
     margin-top: 100px;
 }
 
@@ -103,9 +106,14 @@
     align-items: flex-start;
 }
 
-.history-item div p, .favorites-item div p {
+.history-item-right-container p:first-child, .favorites-item-right-container p:first-child {
+    direction: rtl;
+    width: 90%;
+    margin-top: 20px;
+    text-align: left;
     white-space: nowrap;
     text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .removed-favorite, .added-favorite, .not-loggedin, .deleted-item {

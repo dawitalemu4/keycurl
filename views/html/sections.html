@@ -58,15 +58,20 @@
     {{ $page := index . 1 }}
 
     <div id="shortcuts">
-        {{ if eq $page "index" }}
-            {{ template "index-shortcuts" }}
-        {{ else if eq $page "login" }}
-            {{ template "login-shortcuts" }}
-        {{ else if eq $page "signup" }}
-            {{ template "signup-shortcuts" }}
-        {{ else if eq $page "profile" }}
-            {{ template "profile-shortcuts" }}
-        {{ end }}           
+        <div id="shortcuts-modal">
+            {{ if eq $page "index" }}
+                {{ template "index-shortcuts" }}
+            {{ else if eq $page "login" }}
+                {{ template "login-shortcuts" }}
+            {{ else if eq $page "signup" }}
+                {{ template "signup-shortcuts" }}
+            {{ else if eq $page "profile" }}
+                {{ template "profile-shortcuts" }}
+            {{ end }}           
+        </div>
+        <div id="shortcuts-toggle-modal">
+            <img id="shortcuts-toggle" onclick="toggleShortcuts();" />
+        </div>
     </div>
 {{ end }}
 

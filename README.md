@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="https://github.com/dawitalemu4/gokey-cURL/assets/106638403/7555cd2c-3cf0-42fa-9420-90c35502a897" alt="gokey-cURL icon" style="width: 50px; height: 50px;">
+    <img src="https://github.com/dawitalemu4/postwoman/assets/106638403/7555cd2c-3cf0-42fa-9420-90c35502a897" alt="gokey-cURL icon" style="width: 50px; height: 50px;">
     <p>gokey-cURL</p>
 </h1>
 
