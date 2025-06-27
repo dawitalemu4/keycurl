@@ -3,7 +3,7 @@ package handlers
 import (
     "github.com/labstack/echo/v4"
 
-    "gokey-cURL/utils"
+    "keycurl/utils"
 )
 
 var db = utils.DB()
@@ -19,5 +19,5 @@ func errorJSON(key string, value string) jsonMessage {
 }
 
 func HealthCheck(c echo.Context) error {
-    return c.String(220, "gokey-cURL:~")
+    return c.String(220, "keycurl:~")
 }

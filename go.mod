@@ -1,4 +1,4 @@
-module gokey-cURL
+module keycurl
 
 go 1.22.1
 

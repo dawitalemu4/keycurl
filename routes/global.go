@@ -3,7 +3,7 @@ package routes
 import (
     "github.com/labstack/echo/v4"
 
-    "gokey-cURL/handlers"
+    "keycurl/handlers"
 )
 
 func ConfigGlobalRoutes() *echo.Echo {
