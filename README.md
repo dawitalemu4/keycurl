@@ -1,11 +1,11 @@
 <h1 align="center">
-    <img src="https://github.com/dawitalemu4/postwoman/assets/106638403/7555cd2c-3cf0-42fa-9420-90c35502a897" alt="gokey-cURL icon" style="width: 50px; height: 50px;">
-    <p>gokey-cURL</p>
+    <img src="https://github.com/dawitalemu4/postwoman/assets/106638403/7555cd2c-3cf0-42fa-9420-90c35502a897" alt="keycurl icon" style="width: 50px; height: 50px;">
+    <p>keycurl</p>
 </h1>
 
 *Lowkey a go cURL wrapper with just your keys*
 
-gokey-cURL is a self-hosted dev tool that achieves what postman does but with my personal preferences in its functionality and design. Made with Go (Echo), HTMX, and cURL.
+keycurl is a self-hosted dev tool that achieves what postman does but with my personal preferences in its functionality and design. Made with Go (Echo), HTMX, and cURL.
 
 
 ## Differences from Postman
@@ -57,24 +57,24 @@ gokey-cURL is a self-hosted dev tool that achieves what postman does but with my
 <p style="visibility:hidden">https://github.com/dawitalemu4/postwoman/assets/106638403/2b725e99-f3b3-4b6c-ba3c-33f6369b3e1d</p>
 
 
-Go to [gokey.github.io/features](https://gokey.github.io/features) to view all features.
+Go to [keycurl.github.io/features](https://keycurl.github.io/features) to view all features.
 
 
 ## Installation
 
 ### Docker Setup
 
-See the README in the [.docker-setup](https://github.com/dawitalemu4/gokey-cURL/tree/main/.docker-setup) folder for the docker setup guide.
+See the README in the [.docker-setup](https://github.com/dawitalemu4/keycurl/tree/main/.docker-setup) folder for the docker setup guide.
 
-> WARNING: If using gokey-cURL from docker and you want to test localhost urls, replace localhost with host.docker.internal in the url.
+> WARNING: If using keycurl from docker and you want to test localhost urls, replace localhost with host.docker.internal in the url.
 
 ### Local Setup
 
-To locally run gokey-cURL, you need to have Go, PostgreSQL, Bash, and cURL installed on your machine.
+To locally run keycurl, you need to have Go, PostgreSQL, Bash, and cURL installed on your machine.
 
 1. Download the ZIP of this repo or clone the repository
 ```bash
-git clone https://github.com/dawitalemu4/gokey-cURL.git
+git clone https://github.com/dawitalemu4/keycurl.git
 ```
 
 2. Install the dependencies
@@ -106,23 +106,23 @@ air
 
 Download links: [Go](https://go.dev/doc/install), [PostgreSQL](https://www.postgresql.org/download/), [Bash](https://git-scm.com/downloads), [cURL](https://curl.se/download.html).
 
-View [gokey.github.io/install](https://gokey.github.io/install) for more detailed instructions for your OS.
+View [keycurl.github.io/install](https://keycurl.github.io/install) for more detailed instructions for your OS.
 
 
 ## Startup Shortcuts
 
-Check out my [startup script](https://github.com/dawitalemu4/gokey-cURL/blob/main/startup.sh) to easily start up gokey-cURL locally from a shortcut on your taskbar, or this [startup script](https://github.com/dawitalemu4/gokey-cURL/tree/main/.docker-setup/startup.sh) if you are using docker.
+Check out my [startup script](https://github.com/dawitalemu4/keycurl/blob/main/startup.sh) to easily start up keycurl locally from a shortcut on your taskbar, or this [startup script](https://github.com/dawitalemu4/keycurl/tree/main/.docker-setup/startup.sh) if you are using docker.
 
-Visit [gokey.github.io/shortcuts](https://gokey.github.io/shortcuts) for demo videos and tutorials on how to make your own shortcut.
+Visit [keycurl.github.io/shortcuts](https://keycurl.github.io/shortcuts) for demo videos and tutorials on how to make your own shortcut.
 
 
 ## Contributing
 
-I'm open to contributions and suggestions, but fork this project if there are any crazy big changes you want to make that go against the [gokey.github.io/contributing](https://gokey.github.io/contributing).
+I'm open to contributions and suggestions, but fork this project if there are any crazy big changes you want to make that go against the [keycurl.github.io/contributing](https://keycurl.github.io/contributing).
 
 Run `go test -v ./tests` to run the tests against your changes before creating a pr.
 
-Follow the checklist in the [gokey.github.io/contributing](https://gokey.github.io/contributing) if you create a pull request or an issue.
+Follow the checklist in the [keycurl.github.io/contributing](https://keycurl.github.io/contributing) if you create a pull request or an issue.
 
 
 ## FAQ
@@ -133,11 +133,11 @@ Follow the checklist in the [gokey.github.io/contributing](https://gokey.github.
 
 **Q:** **Why self-hosted?**
 
-**A:**  I don't want to pay for cloud resources for your convenience. Jokes aside, I didn't want to figure out how to make API requests to an API that is locally hosted from gokey-cURL if it was hosted on a deployed server (without having a user download something locally), and I plan on using this on APIs I'm building locally.
+**A:**  I don't want to pay for cloud resources for your convenience. Jokes aside, I didn't want to figure out how to make API requests to an API that is locally hosted from keycurl if it was hosted on a deployed server (without having a user download something locally), and I plan on using this on APIs I'm building locally.
 
-Leave a post in the [discussions](https://github.com/dawitalemu4/gokey-cURL/discussions) if you have any questions.
+Leave a post in the [discussions](https://github.com/dawitalemu4/keycurl/discussions) if you have any questions.
 
 
 ## License
 
-This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International Public License - see the [LICENSE.txt](https://github.com/dawitalemu4/gokey-cURL/blob/main/LICENSE.txt).
+This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International Public License - see the [LICENSE.txt](https://github.com/dawitalemu4/keycurl/blob/main/LICENSE.txt).

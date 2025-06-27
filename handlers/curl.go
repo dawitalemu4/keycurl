@@ -11,7 +11,7 @@ import (
 
     "github.com/labstack/echo/v4"
 
-    "gokey-cURL/models"
+    "keycurl/models"
 )
 
 func buildCommand(request models.Request) []string {
@@ -60,7 +60,7 @@ func ExecuteCurlRequest(c echo.Context) error {
         return c.HTML(200, "<p>$  error: " + err.Error() + ", probably an invalid url given</p>")
     }  else if err != nil && err.Error() == "exit status 7" {
         println(err.Error(), "\n response: ", response.String(), "\n headers: ", headers.String())
-        return c.HTML(200, "<p>$  error: " + err.Error() + ", probably can't connect to localhost, use host.docker.internal instead of localhost in your url if running gokey-cURL with docker</p>")
+        return c.HTML(200, "<p>$  error: " + err.Error() + ", probably can't connect to localhost, use host.docker.internal instead of localhost in your url if running keycurl with docker</p>")
     } else if err != nil {
         println(err.Error(), "\n response: ", response.String(), "\n headers: ", headers.String())
         return c.HTML(200, "<p>$  error: " + err.Error() + ", probably an invalid header or body given</p>")

@@ -12,7 +12,7 @@ import (
     "github.com/labstack/echo/v4"
     "github.com/dustin/go-humanize"
 
-    "gokey-cURL/models"
+    "keycurl/models"
 )
 
 var emptyError error = blankTokenError()

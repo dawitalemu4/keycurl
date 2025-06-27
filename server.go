@@ -1,8 +1,8 @@
 package main
 
 import (
-    "gokey-cURL/utils"
-    "gokey-cURL/routes"
+    "keycurl/utils"
+    "keycurl/routes"
 )
 
 func main() {
