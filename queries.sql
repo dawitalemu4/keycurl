@@ -28,5 +28,6 @@ REFERENCES "user"(email);
 
 INSERT INTO "user" (username, email, password, date, deleted) VALUES ('anon', 'null', 'anon', CAST(CAST(EXTRACT(EPOCH FROM NOW()) AS INTEGER) AS TEXT), false);
 
+-- If not automatically created for some reason
 -- psql -U postgres -c "CREATE DATABASE keycurl;"
 -- psql -U postgres -d keycurl -f './queries.sql'
