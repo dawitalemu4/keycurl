@@ -3,7 +3,7 @@
     <p>keycurl</p>
 </h1>
 
-*Lowkey a go cURL wrapper with just your keys*
+*Lowkey a cURL wrapper with just your keys*
 
 keycurl is a self-hosted dev tool that achieves what postman does but with my personal preferences in its functionality and design. Made with Go (Echo), HTMX, and cURL.
 
