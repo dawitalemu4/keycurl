@@ -2,8 +2,8 @@
 
 PROCESS=Docker
 
-# enter your gokey-cURL folder path
-cd D:/dev/gokey-cURL
+# enter your keycurl folder path
+cd D:/dev/keycurl
 
 
 # start up the docker engine 
@@ -36,6 +36,6 @@ done
 # done
 
 
-# start up gokey-cURL
+# start up keycurl 
 
 docker-compose up
