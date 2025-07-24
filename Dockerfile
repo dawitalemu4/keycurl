@@ -19,24 +19,16 @@ ARG GO_VERSION=1.22.2
 # RUN go build -o /keycurl
 
 
-# FROM archlinux:base
+# FROM debian:stable-20250721-slim
+
+# RUN apt-get update && \
+#     apt-get install -y curl && \
+#     rm -rf /var/lib/apt/lists/*
 
 # COPY --from=builder /keycurl /usr/local/bin
 # COPY --from=builder /go/views /views
 
-# docker image build -t keycurl .
-# docker image tag keycurl dawitalemu4/keycurl:latest
-# docker push dawitalemu4/keycurl:latest
-
-
-
-# for me (test image before publish)
-
-# FROM keycurl:latest
-
-# COPY .env .
-
-# CMD ["keycurl"]
+# docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t dawitalemu4/keycurl:latest --push .
 
 
 
@@ -49,7 +41,11 @@ COPY . .
 RUN go build -o /keycurl
 
 
-FROM archlinux:base
+FROM debian:stable-20250721-slim
+
+RUN apt-get update && \
+    apt-get install -y curl && \
+    rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /keycurl /usr/local/bin
 COPY --from=builder /go/views /views
